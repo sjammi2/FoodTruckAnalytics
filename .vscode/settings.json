@@ -1,0 +1,11 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "facesConnection",
+            "database": "${workspaceFolder:Camera_Detection_Analytics}/faces.db"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}
