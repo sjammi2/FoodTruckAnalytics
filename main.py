@@ -36,7 +36,7 @@ try:
 
                     if t:
                         i, v = t
-                        cur.execute("UPDATE faces WHERE id = " + str(index) + "SET timesSeen = " + str(v + 1))
+                        cur.execute("UPDATE faces SET timesSeen = " + str(v + 1) + " WHERE id = " + str(index))
                     else:
                         cur.execute(f"INSERT INTO faces VALUES({index}, 1)")
 
