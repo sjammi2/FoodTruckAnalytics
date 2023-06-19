@@ -8,8 +8,8 @@ def main():
     currTime = 0
     prevTime = 0
 
-    detector = fd.FaceDetector()
-    cap = cv2.VideoCapture(1)
+    detector = fd.FaceDetector(minDetectionCon=0.3)
+    cap = cv2.VideoCapture("./Videos/6.mp4")
 
     while True:
         success, img = cap.read()
