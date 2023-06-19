@@ -17,7 +17,7 @@ currTime = 0
 prevTime = 0
 
 detector = fd.FaceDetector()
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture("./Videos/6.mp4")
 
 try:
     while True:
@@ -34,10 +34,9 @@ try:
                     result = cur.execute(query)
                     t = result.fetchone()
 
-                    i, v = t
-
-                    if v:
-                        cur.execute("UPDATE faces SET timesSeen = " + str(v + 1))
+                    if t:
+                        i, v = t
+                        cur.execute("UPDATE faces WHERE id = " + str(index) + "SET timesSeen = " + str(v + 1))
                     else:
                         cur.execute(f"INSERT INTO faces VALUES({index}, 1)")
 
@@ -57,4 +56,4 @@ try:
 except KeyboardInterrupt:
     print('Video stream interrupted by keyboard.')
 except cv2.error as e:
-    print('Video stream interruped, video likely ended. Exception: ' + e)
+    print(e)

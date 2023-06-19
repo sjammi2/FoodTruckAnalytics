@@ -1,0 +1,1 @@
+UPDATE faces SET timesSeen = 475 WHERE id = 2
